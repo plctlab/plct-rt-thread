@@ -1,21 +1,7 @@
-*.pyc
-*.map
-*.dblite
 *.elf
 *.bin
 *.hex
-*.axf
 *.exe
-*.pdb
-*.idb
-*.ilk
-*.old
-*.crf
-build
-Debug
-rtthread
-settings
-documentation/html
 *~
 *.o
 *.obj
@@ -25,8 +11,6 @@ documentation/html
 *.a
 *.i
 *.d
-*.dfinish
-*.su
 #source insight 4 project files
 *.si4project
 packages
@@ -51,10 +35,4 @@ CMakeLists.txt
 cmake-build-debug
 *.mk
 
-# vDSO
-vdso_sys.os
-vdso.lds
-
-# cherryusb libraries
-!components/drivers/usb/cherryusb/port/pusb2/*.a
-!components/drivers/usb/cherryusb/port/xhci/phytium/*.a
+.vscode/

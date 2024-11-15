@@ -1,9 +1,0 @@
-#Build & install directories
-build/
-packages/
-install/
-
-rtthread.*
-
-__pycache__
-.config.old

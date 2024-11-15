@@ -1,3 +1,0 @@
-config RT_USING_LCD
-    bool "Using LCD graphic drivers"
-    default n
