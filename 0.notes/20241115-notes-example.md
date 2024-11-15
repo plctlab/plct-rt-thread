@@ -131,9 +131,9 @@ $ ls
 ## 3.7. 图片的例子
 
 ```
-![图片的名字](./pictures/20241115-notes-example/rt-thread.png)
+![](./pictures/20241115-notes-example/rt-thread.png)
 ```
 
 **效果：**
 
-![图片的名字](./pictures/20241115-notes-example/rt-thread.png)
+![](./pictures/20241115-notes-example/rt-thread.png)
