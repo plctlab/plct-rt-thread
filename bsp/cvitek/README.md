@@ -3,11 +3,11 @@
 - [参考文档](#参考文档)
 - [概述](#概述)
 - [BSP 支持情况](#bsp-支持情况)
-	- [驱动支持列表](#驱动支持列表)
+  - [驱动支持列表](#驱动支持列表)
 - [编译](#编译)
-	- [Toolchain 下载](#toolchain-下载)
-	- [依赖安装](#依赖安装)
-	- [构建](#构建)
+  - [Toolchain 下载](#toolchain-下载)
+  - [依赖安装](#依赖安装)
+  - [构建](#构建)
 - [运行](#运行)
 - [FAQ](#faq)
 - [联系人信息](#联系人信息)
@@ -90,7 +90,7 @@ $ export RTT_EXEC_PATH=/opt/riscv64-linux-musleabi_for_x86_64-pc-linux-gnu/bin
 
 ## 依赖安装
 ```shell
-$ sudo apt install -y scons libncurses5-dev device-tree-compiler
+$ sudo apt install -y scons libncurses5-dev device-tree-compiler bison flex
 ```
 
 ## 构建
@@ -145,6 +145,8 @@ $ sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 ```
 
 3. 如发现切换开发板编译正常，但无法正常打包，请切换至自动下载的 `cvi_bootloader` 目录，并手工运行 `git pull` 更新，或删除该目录后重新自动下载。
+4. 若你在构建小核文件时遇到/bin/sh: 1: xx: not found的报错，且系统版本较新，如ubunto24 lts。很可能是因为旧依赖被移除了，重新安装即可。
+`sudo apt install xx`
 
 # 联系人信息
 
