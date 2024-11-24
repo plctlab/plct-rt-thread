@@ -1,5 +1,16 @@
 **文件夹 `0.notes` 用于收集和归档 PLCT-lab RT-Thread 兴趣小组的笔记**
 
+<!-- TOC -->
+
+- [如何添加一个笔记文件](#如何添加一个笔记文件)
+- [如何提交 git commit](#如何提交-git-commit)
+
+<!-- /TOC -->
+
+有问题请联系: 汪辰, 电子邮箱地址: <wangchen20@iscas.ac.cn> 或者 <unicorn_wang@outlook.com>。
+
+# 如何添加一个笔记文件
+
 为方便整理，添加笔记文件请遵循以下简单规则：
 
 - 一个笔记一个文件，放在文件夹 `0.notes` 下。文件格式请使用 markdown 语法。
@@ -38,6 +49,8 @@ $ git commit -m "add notes: xxx" -s # `-s` 用于加上自己的签名
 $ git push origin dev-notes # 假设你自己的远程 github 仓库是 origin
 ```
 
+注意: 有关 commit 的撰写要求，见 [“如何提交 git commit”](#如何提交-git-commit)
+
 进入 github 提交 PR（细节不赘述），需要注意创建 PR 时选择好对应的的 **"base repository"**(目标仓库) 和 **"base"**(目标分支)，默认可能不是我们期望的仓库和分支名称。这里：
 
 - **"base repository"** 一定要确保选择 **plctlab/plct-rt-thread**。
@@ -45,7 +58,65 @@ $ git push origin dev-notes # 假设你自己的远程 github 仓库是 origin
 
 编辑 title 和 description 后就可以提交了。
 
-
 ![](./pictures/readme/how-to-pr.png)
 
-有问题请联系: 汪辰, 电子邮箱地址: <wangchen20@iscas.ac.cn> 或者 <unicorn_wang@outlook.com>。
+# 如何提交 git commit
+
+帮助大家方便清晰地了解补丁，特此规范化代码提交的 git commit 撰写如下。注，本说明同样适用于针对 <https://github.com/RT-Thread/rt-thread> 的提交。
+
+详细的参考：<https://docs.kernel.org/translations/zh_CN/process/submitting-patches.html>
+
+下面是一个参考的例子：
+
+```shell
+$ git show c8914c7f2b
+commit c8914c7f2bd4109bdb7f01f388bbc09e5e15c9a9
+Author: Chen Wang <unicorn_wang@outlook.com>
+Date:   Tue Jul 23 13:58:24 2024 +0800
+
+    bsp: cvitek: fixed stacksize issue
+    
+    In the original Sconstruct script, `GetDepend('__STACKSIZE__')`
+    is placed before the call to `PrepareBuilding()`, which causes
+    the value of `GetDepend('__STACKSIZE__')` to always be False,
+    and the value of `__STACKSIZE__` in `link_stacksize.lds` will
+    not be updated.
+    
+    Solution: move the call if `PrepareBuilding()` ahead.
+    
+    Also sync and update the .config and rtconfig.h, plus the
+    link_stacksize.lds.
+    
+    Signed-off-by: Chen Wang <unicorn_wang@outlook.com>
+......
+```
+
+一个完整的 commit 文本包括以下三个部分，推荐用英文，也可以用中文。
+
+- 标题：必须提供。一行，尽量不要超过 80 个字符
+
+  推荐加上前缀，譬如这里的例子中 "bsp: cvitek: " 就是前缀，其他模块/组件的前缀参考其他相关 commit。
+
+- 正文：必须提供。
+
+  如果是 bug fix，建议包括至少三部分，
+  
+  - “问题描述”：描述问题的现象
+  - “问题分析”，导致 “问题” 出现的原因
+  - “解决方案”，该补丁的解决思路，可以很简单，也可以详细描述
+
+  如果是 new feature，建议包括至少两部分。
+
+  - “需求来源”：为何要做这个新特性
+  - “解决方案”，该补丁的解决思路，可以很简单，也可以详细描述
+
+  如果改动的确很小，则以上要求可以简化为一句话描述。
+
+- 签名：必须提供。格式："Signed-off-by: 姓名 <邮箱地址>"
+
+
+
+
+  
+
+
