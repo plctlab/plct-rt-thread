@@ -22,7 +22,7 @@
 
 # 2. 测试周期
 
-每周一次，具体时间可以适时调整。
+每周一次，具体时间建议固定下来，至于具体是周几，可以适时调整。
 
 # 3. 测试覆盖开发板
 
@@ -35,27 +35,32 @@
 
 | CASE 编号 | 测试开发板            | CASE 描述 |
 |-----------|-----------------------|-----------|
-|case 1     |bsp/cvitek 的 duo      |测试大核（默认 RT Smart）下，上电后可以挂载 ext4 文件系统，控制台（串口）显示正常。具体使用说明参考 `bsp/cvitek/README.md`。|
-|case 2     |bsp/cvitek 的 duo      |测试小核（只支持 RT standard）下，上电后控制台（串口）显示正常。具体使用说明参考 `bsp/cvitek/README.md`。|
-|case 3     |bsp/cvitek 的 duo 256M |测试大核（默认 RT Smart）下，上电后可以挂载 ext4 文件系统，控制台（串口）显示正常。具体使用说明参考 `bsp/cvitek/README.md`。|
-|case 4     |bsp/cvitek 的 duo 256M |测试小核（只支持 RT standard）下，上电后控制台（串口）显示正常。具体使用说明参考 `bsp/cvitek/README.md`。|
-|case 5     |bsp/cvitek 的 duo S    |测试大核（默认 RT Smart）下，上电后可以挂载 ext4 文件系统，控制台（串口）显示正常。具体使用说明参考 `bsp/cvitek/README.md`。|
-|case 6     |bsp/cvitek 的 duo S    |测试小核（只支持 RT standard）下，上电后控制台（串口）显示正常。具体使用说明参考 `bsp/cvitek/README.md`。|
-|case 7     |bsp/qemu-virt64-riscv  |测试配置为 RT standard 模式下（默认），上电后控制台（qemu）显示正常。具体使用说明参考 `bsp/qemu-virt64-riscv/README_cn.md`。|
-|case 8     |bsp/qemu-virt64-riscv  |测试配置为 RT smart 模式下，上电后可以挂载 ext4 文件， 上电后控制台（qemu）显示正常。具体使用说明参考 `bsp/qemu-virt64-riscv/README_cn.md`。|
+|case 1     |bsp/cvitek 的 duo      |测试大核（默认 RT Smart）下，上电后可以挂载 ext4 文件系统，控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 2     |bsp/cvitek 的 duo      |测试小核（只支持 RT standard）下，上电后控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 3     |bsp/cvitek 的 duo 256M |测试大核（默认 RT Smart）下，上电后可以挂载 ext4 文件系统，控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 4     |bsp/cvitek 的 duo 256M |测试小核（只支持 RT standard）下，上电后控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 5     |bsp/cvitek 的 duo S    |测试大核（默认 RT Smart）下，上电后可以挂载 ext4 文件系统，控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 6     |bsp/cvitek 的 duo S    |测试小核（只支持 RT standard）下，上电后控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 7     |bsp/qemu-virt64-riscv  |测试配置为 RT standard 模式下（默认），上电后控制台（qemu）显示正常。具体使用说明参考 [`bsp/qemu-virt64-riscv/README_cn.md`][2]。|
+|case 8     |bsp/qemu-virt64-riscv  |测试配置为 RT smart 模式下，上电后可以挂载 ext4 文件， 上电后控制台（qemu）显示正常。具体使用说明参考 [`bsp/qemu-virt64-riscv/README_cn.md`][2]。|
 
 # 5. 编写测试报告
 
-针对每次测试结果，请提供如下格式的测试报告
+针对每次测试结果，请提供测试报告，测试报告需要提供如下内容：
 
 - 测试对应的 master 上的 commit ID
+
 - 测试结果，建议以如下表格形式提供：
 
-| CASE 编号 | 测试结果 | 测试描述 |
-|-----------|----------|----------|
-| case 1    | XXX      | XXX      |
-| case 2    | ......   | ......   |
-| ......    | ......   | ......   |
+  | CASE 编号 | 测试结果 | 测试描述 |
+  |-----------|----------|----------|
+  | case 1    | XXX      | XXX      |
+  | case 2    | ......   | ......   |
+  | ......    | ......   | ......   |
 
-其中，测试结果为 PASS 或者 FAIL
-如果某个 case 的测试结果为 FAIL，请在 "测试描述" 那一列给出失败的现象描述；如果为 PASS，"测试描述" 则可以空着不填。
+  其中，测试结果为 `PASS` 或者 `FAIL`。
+
+  如果某个 case 的测试结果为 `FAIL`，请在 "测试描述" 那一列给出失败的现象描述；如果为 `PASS`，"测试描述" 则可以空着不填。
+
+[1]:https://github.com/RT-Thread/rt-thread/blob/master/bsp/cvitek/README.md
+[2]:https://github.com/RT-Thread/rt-thread/blob/master/bsp/qemu-virt64-riscv/README_cn.md
