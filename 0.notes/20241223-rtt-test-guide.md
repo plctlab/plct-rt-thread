@@ -33,16 +33,18 @@
 
 # 4. 测试用例说明
 
+**注意：以下编译不同 bsp 的 RT-Thread 版本（标准版 or Smart 版本）时需要使用对应的编译工具链。具体参考对应 bsp 的 README 说明。**
+
 | CASE 编号 | 测试开发板            | CASE 描述 |
 |-----------|-----------------------|-----------|
-|case 1     |bsp/cvitek 的 duo      |测试大核（默认 RT Smart）下，上电后可以挂载 ext4 文件系统，控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
-|case 2     |bsp/cvitek 的 duo      |测试小核（只支持 RT standard）下，上电后控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
-|case 3     |bsp/cvitek 的 duo 256M |测试大核（默认 RT Smart）下，上电后可以挂载 ext4 文件系统，控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
-|case 4     |bsp/cvitek 的 duo 256M |测试小核（只支持 RT standard）下，上电后控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
-|case 5     |bsp/cvitek 的 duo S    |测试大核（默认 RT Smart）下，上电后可以挂载 ext4 文件系统，控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
-|case 6     |bsp/cvitek 的 duo S    |测试小核（只支持 RT standard）下，上电后控制台（串口）显示正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
-|case 7     |bsp/qemu-virt64-riscv  |测试配置为 RT standard 模式下（默认），上电后控制台（qemu）显示正常。具体使用说明参考 [`bsp/qemu-virt64-riscv/README_cn.md`][2]。|
-|case 8     |bsp/qemu-virt64-riscv  |测试配置为 RT smart 模式下，上电后可以挂载 ext4 文件， 上电后控制台（qemu）显示正常。具体使用说明参考 [`bsp/qemu-virt64-riscv/README_cn.md`][2]。|
+|case 1     |bsp/cvitek 的 duo 256M |配置 Board Type 为 duo 256M（默认），大核为 RT Smart（默认），使能 SDH/RTC/DISKFS/lwext4，编译正常。上电后控制台（串口）显示 RT-Thread Smart logo，可以挂载 ext4 文件系统并进入 ash，运行正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 2     |bsp/cvitek 的 duo 256M |配置 Board Type 为 duo 256M（默认），配置小核为 RT standard（默认且只支持 RT standard），编译正常。上电后控制台（串口）显示 RT-Thread 标准版 logo 并进入 msh，运行正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 3     |bsp/cvitek 的 duo      |配置 Board Type 为 duo，大核为 RT Smart（默认），使能 SDH/RTC/DISKFS/lwext4，编译正常。上电后控制台（串口）显示 RT-Thread Smart logo，可以挂载 ext4 文件系统并进入 ash，运行正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 4     |bsp/cvitek 的 duo      |配置 Board Type 为 duo，小核为 RT standard（默认且只支持 RT standard），编译正常。上电后控制台（串口）显示 RT-Thread 标准版 logo 并进入 msh，运行正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 5     |bsp/cvitek 的 duo S    |配置 Board Type 为 duo S，配置大核为 RT Smart（默认），使能 SDH/RTC/DISKFS/lwext4，编译正常。上电后控制台（串口）显示 RT-Thread Smart logo，可以挂载 ext4 文件系统并进入 ash，运行正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 6     |bsp/cvitek 的 duo S    |配置 Board Type 为 duo S，配置小核为 RT standard（默认且只支持 RT standard），编译正常。上电后控制台（串口）显示 RT-Thread 标准版 logo 并进入 msh，运行正常。具体使用说明参考 [`bsp/cvitek/README.md`][1]。|
+|case 7     |bsp/qemu-virt64-riscv  |配置为 RT standard 模式下（默认），编译正常。运行 `run.sh` 后控制台（qemu）显示 RT-Thread 标准版 logo 并进入 msh，运行正常。具体使用说明参考 [`bsp/qemu-virt64-riscv/README_cn.md`][2]。|
+|case 8     |bsp/qemu-virt64-riscv  |配置为 RT smart 模式下并使能 lwext4，编译正常。运行 `run.sh <path_to_ext4_image>` 后控制台（qemu）显示 RT-Thread Smart logo 并可以挂载 ext4 文件进入 ash，运行正常，执行 poweroff 可以退出 qemu。具体使用说明参考 [`bsp/qemu-virt64-riscv/README_cn.md`][2]。|
 
 # 5. 编写测试报告
 
