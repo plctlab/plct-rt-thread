@@ -5,16 +5,25 @@
 - 原文地址: <https://github.com/plctlab/plct-rt-thread/blob/notes/0.notes/20241212-github-tips.md>。
 
 
-**How-to 列表：**
+**How-to 列表**
 
 <!-- TOC -->
 
-- [1. 如何编写 git commit message](#1-如何编写-git-commit-message)
-- [2. 给 RT-Thread 提交 PR 时的注意事项](#2-给-rt-thread-提交-pr-时的注意事项)
-- [3. PR 经过审阅后我该怎么做](#3-pr-经过审阅后我该怎么做)
+- [1. How to setup git when you are using github](#1-how-to-setup-git-when-you-are-using-github)
+- [2. How to write git commit message](#2-how-to-write-git-commit-message)
+- [3. Things to note when submitting PR to RT-Thread](#3-things-to-note-when-submitting-pr-to-rt-thread)
+- [4. What should I do after my PR is reviewed](#4-what-should-i-do-after-my-pr-is-reviewed)
 
 <!-- /TOC -->
-# 1. 如何编写 git commit message
+
+# 1. How to setup git when you are using github
+
+See <https://docs.github.com/en/get-started/getting-started-with-git/set-up-git>.
+
+
+# 2. How to write git commit message
+
+首先阅读 [FAQ 1: How to setup git when you are using github](#1-how-to-setup-git-when-you-are-using-github)。确保你已经正确设置好你的环境，特别是你已经正确配置了你的 username 和 commit email address。
 
 很多人提交 PR 时写得过于简单，这对项目的长久维护是不好的，所以特此对代码提交的 git commit 撰写规范化如下。
 
@@ -68,7 +77,9 @@ Date:   Tue Jul 23 13:58:24 2024 +0800
 
 - 签名：必须提供。格式："Signed-off-by: 姓名 <可以联系到您的邮箱地址>"
 
-# 2. 给 RT-Thread 提交 PR 时的注意事项
+# 3. Things to note when submitting PR to RT-Thread
+
+给 RT-Thread 提交 PR 时的注意事项
 
 参考 <https://github.com/RT-Thread/rt-thread/pull/9705>
 
@@ -89,7 +100,9 @@ Date:   Tue Jul 23 13:58:24 2024 +0800
   有时候修改比较大，则在一个 PR 中会有必要分成多个 commit 进行提交，也方便 review。一个 PR 包含多个 commit 的例子：<https://github.com/RT-Thread/rt-thread/pull/9703/commits>。
 
   
-# 3. PR 经过审阅后我该怎么做
+# 4. What should I do after my PR is reviewed
+
+PR 经过审阅后我该怎么做
 
 - 仔细阅读 Reviewer 的评论，如果接受则在线回复接受，如果有疑问则在线提出。请不要没有任何回应后就开始修改。切记社区的 Reviewer 都是友情在帮助你审阅代码，请对他人的劳动成果表示起码的尊重。
 
