@@ -52,15 +52,17 @@
 
 - 测试结果，建议以如下表格形式提供：
 
-  | CASE 编号 | 测试结果 | 测试描述 |
-  |-----------|----------|----------|
-  | case 1    | XXX      | XXX      |
-  | case 2    | ......   | ......   |
-  | ......    | ......   | ......   |
+  | CASE #    | Result   | Description |
+  |-----------|----------|-------------|
+  | case 1    | PASS     |             |
+  | case 2    | FAIL..   | #10161, #10165 |
+  | ......    | ......   | ......      |
 
   其中，测试结果为 `PASS` 或者 `FAIL`。
 
-  如果某个 case 的测试结果为 `FAIL`，请在 "测试描述" 那一列给出失败的现象描述；如果为 `PASS`，"测试描述" 则可以空着不填。
+  如果为 `PASS`，"测试描述" 则可以空着不填。
+
+  如果某个 case 的测试结果为 `FAIL`，请在 "测试描述" 那一列给出失败的现象描述。方便起见，如果是一个已知的问题并有对应的 issue，可以直接填 issue#，如果是新发现的问题，可以直接提新的 issue 并给出 issue# 就好，issue# 之间用 "," 分隔。这样详细的错误描述可以直接体现在 issue 中。提 issue 的位置在 <https://github.com/RT-Thread/rt-thread/issues>。
 
 [1]:https://github.com/RT-Thread/rt-thread/blob/master/bsp/cvitek/README.md
 [2]:https://github.com/RT-Thread/rt-thread/blob/master/bsp/qemu-virt64-riscv/README_cn.md
